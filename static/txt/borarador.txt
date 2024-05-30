@@ -1,0 +1,17 @@
+@musicalApp.route('/uProducto/<string:id>', methods=['GET', 'POST'])
+def uProducto(id):
+    if request.method == 'POST':
+        UpProducto = db.connection.cursor()
+        nombrec = request.form['nombrec']
+        artistac = request.form['artistac']
+        albumc = request.form['albumc']
+        fechac = request.form['fechac']
+        generoc = request.form['generoc']
+        nombreimg = request.form['nombreimg']
+        fechareg = request.form['fechareg']
+        UpProducto.execute("UPDATE usuario SET nombrec=%s, correou=%s, claveu=%s, perfilu=%s WHERE id=%s", (nombreu,correou,claveCifrada,perfilu,id))
+        db.connection.commit()
+        flash('USUARIO ACTUALIZADO')
+        return redirect(url_for('sUsuario'))
+    else:static/txt/borarador.txt
+        return redirect(request.url)
